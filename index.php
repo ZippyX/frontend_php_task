@@ -23,7 +23,7 @@ include "functions.php";
               <a href="/category/motion">Motion</a>
         </nav>
         <div class="gallery">
-            <div class="photo">здесь будет фото </div>
+            <div class="photo"><?php getPhotos(); ?></div>
             <div class="photo">здесь будет фото </div>
             <div class="photo">здесь будет фото </div>
             <div class="photo">здесь будет фото </div>

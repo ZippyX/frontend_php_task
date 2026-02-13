@@ -1,28 +1,25 @@
-<!-- <?php
-// $arr = [
-//     "photo_1" => [
-//         "category_name",
-//         "img_path"
-//     ],
-//     "photo_2" =>
-//     [
-//         "fruits",
-//         "/photos/banana.jpg"
-//     ]
+<?php
+include "data.php";
 
-// ];
-// foreach($arr as $key => $value)
-// {
-//     $category = $value[0];
-//     $path = $value[1];
-//     echo "<br>";
-//     echo $category;
-//     echo "\n";
-//     echo "<br>";
-//     echo "<img src=\"$path\"width=\"440\">";
-//     echo "\n";
-// }
-// function sayHello(){
-//     return "hello world";
-// }
-?> -->
+function getPhotos()
+{
+$uri = explode('/',$_SERVER["REQUEST_URI"]);
+$category = end($uri);
+FindImagesWithCategory($category);
+
+}
+
+function FindImagesWithCategory($category)
+{
+    global $arr; 
+    foreach($arr as $key => $value)
+        {
+            if($value[0] == "fruits")
+                {
+                    $path = $value[1];
+                    echo "<img src=\"$path\">";
+                }
+        }
+
+}
+?> 
